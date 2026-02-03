@@ -1,368 +1,693 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!-- me_two.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Courier; -webkit-text-stroke: #000000; background-color: #ffffff}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Courier; -webkit-text-stroke: #000000; background-color: #ffffff; min-height: 19.0px}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Courier; color: #103cc0; -webkit-text-stroke: #103cc0; background-color: #ffffff}
-    span.s1 {font-kerning: none}
-    span.s2 {text-decoration: underline ; font-kerning: none; color: #103cc0; -webkit-text-stroke: 0px #103cc0}
-    span.s3 {font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
-    span.s4 {text-decoration: underline ; font-kerning: none; -webkit-text-stroke: 0px #103cc0}
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Me Two - Iman Enayati</title>
+
+
+
+  <!-- Google Font (sans serif) -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+  <style>
+
+    /* 1) Set font to a sans serif Google font */
+
+    body {
+
+      font-family: "Roboto", Arial, Helvetica, sans-serif;
+
+      line-height: 1.55;
+
+      margin: 24px;
+
+      max-width: 980px;
+
+    }
+
+
+
+    /* 2) Set color + size of all H1/H2 and leave 30px margin below */
+
+    h1, h2 {
+
+      color: #1f3b73;
+
+      margin-bottom: 30px;
+
+    }
+
+    h1 { font-size: 2.2rem; }
+
+    h2 { font-size: 1.6rem; }
+
+
+
+    .muted { color: #555; }
+
+    a { color: #0b57d0; }
+
+
+
+    header, section { margin-bottom: 28px; }
+
+
+
+    /* 3) Border around list and center it (do NOT center list items) */
+
+    .pet-list-wrap {
+
+      border: 2px solid #ccc;
+
+      border-radius: 12px;
+
+      padding: 14px 18px;
+
+      width: fit-content;
+
+      margin: 0 auto; /* centers the box */
+
+    }
+
+    .pet-list-wrap ul {
+
+      margin: 0;
+
+      padding-left: 22px; /* keep bullets nicely indented */
+
+      text-align: left;   /* ensure items are NOT centered */
+
+    }
+
+
+
+    /* 4) Favorite food: background image in a div + adjacent text div */
+
+    .food-row { margin-top: 8px; }
+
+    .food-img-bg,
+
+    .food-text {
+
+      display: inline-block;
+
+      vertical-align: top;
+
+    }
+
+    .food-img-bg {
+
+      width: 520px;
+
+      max-width: 100%;
+
+      height: 320px;
+
+      border-radius: 12px;
+
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b0/Hamburger_%2812164386105%29.jpg");
+
+      background-size: cover;
+
+      background-position: center;
+
+      background-repeat: no-repeat;
+
+      margin-right: 16px;
+
+    }
+
+    .food-text {
+
+      width: 380px;
+
+      max-width: 100%;
+
+    }
+
+
+
+    /* Table styling */
+
+    table { width: 100%; border-collapse: collapse; }
+
+    th, td { border: 1px solid #ccc; padding: 10px; vertical-align: top; }
+
+    th { background: #f5f5f5; text-align: left; }
+
+
+
+    /* 5) Alternate row background color */
+
+    tbody tr:nth-child(even) { background: #f2f7ff; }
+
+
+
+    .cover { width: 110px; }
+
+    .cover img { width: 110px; border-radius: 6px; display: block; }
+
+
+
+    /* 6) Form: labels column + inputs column; labels right-aligned */
+
+    form {
+
+      border: 1px solid #ccc;
+
+      padding: 16px;
+
+      border-radius: 12px;
+
+      max-width: 700px;
+
+    }
+
+    .form-row {
+
+      margin-bottom: 12px;
+
+    }
+
+    .form-label,
+
+    .form-field {
+
+      display: inline-block;
+
+      vertical-align: top;
+
+    }
+
+    .form-label {
+
+      width: 180px;
+
+      text-align: right;   /* right-aligned labels */
+
+      padding-right: 12px;
+
+      font-weight: 700;
+
+    }
+
+    .form-field {
+
+      width: calc(100% - 210px);
+
+      min-width: 260px;
+
+    }
+
+    input, select {
+
+      width: 100%;
+
+      padding: 8px;
+
+      box-sizing: border-box;
+
+    }
+
+    button { padding: 10px 14px; cursor: pointer; }
+
+
+
+    /* Optional challenge: fixed social icons */
+
+    .social-icons {
+
+      position: fixed;
+
+      top: 100px;
+
+      right: 35px;
+
+      display: flex;
+
+      gap: 10px;
+
+      align-items: center;
+
+      z-index: 9999;
+
+    }
+
+    .social-icons a {
+
+      display: inline-flex;
+
+      width: 38px;
+
+      height: 38px;
+
+      border-radius: 10px;
+
+      border: 1px solid #cfcfcf;
+
+      background: white;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-decoration: none;
+
+    }
+
+    .social-icons img { width: 20px; height: 20px; display: block; }
+
+
+
+    footer { margin-top: 40px; border-top: 1px solid #e5e5e5; padding-top: 14px; }
+
   </style>
+
 </head>
+
+
+
 <body>
-<p class="p1"><span class="s1">&lt;!-- me_two.html --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;meta charset="UTF-8" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;title&gt;Me Two - Iman Enayati&lt;/title&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;!-- Google Font (sans serif) --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;link rel="preconnect" href="<a href="https://fonts.googleapis.com/"><span class="s2">https://fonts.googleapis.com</span></a>"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;link rel="preconnect" href="<a href="https://fonts.gstatic.com/"><span class="s2">https://fonts.gstatic.com</span></a>" crossorigin&gt;</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space"> </span> &lt;link href="<a href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"><span class="s4">https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap</span></a>" rel="stylesheet"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   /* 1) Set font to a sans serif Google font */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     font-family: "Roboto", Arial, Helvetica, sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     line-height: 1.55;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     margin: 24px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     max-width: 980px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   /* 2) Set color + size of all H1/H2 and leave 30px margin below */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   h1, h2 {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     color: #1f3b73;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     margin-bottom: 30px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   h1 { font-size: 2.2rem; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   h2 { font-size: 1.6rem; }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .muted { color: #555; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   a { color: #0b57d0; }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   header, section { margin-bottom: 28px; }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   /* 3) Border around list and center it (do NOT center list items) */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .pet-list-wrap {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     border: 2px solid #ccc;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     border-radius: 12px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     padding: 14px 18px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     width: fit-content;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     margin: 0 auto; /* centers the box */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .pet-list-wrap ul {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     padding-left: 22px; /* keep bullets nicely indented */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     text-align: left;   /* ensure items are NOT centered */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   /* 4) Favorite food: background image in a div + adjacent text div */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .food-row { margin-top: 8px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .food-img-bg,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .food-text {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     display: inline-block;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     vertical-align: top;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .food-img-bg {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     width: 520px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     max-width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     height: 320px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     border-radius: 12px;</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space"> </span>     background-image: url("<a href="https://upload.wikimedia.org/wikipedia/commons/b/b0/Hamburger_%2812164386105%29.jpg"><span class="s4">https://upload.wikimedia.org/wikipedia/commons/b/b0/Hamburger_%2812164386105%29.jpg</span></a>");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     background-size: cover;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     background-position: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     background-repeat: no-repeat;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     margin-right: 16px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .food-text {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     width: 380px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     max-width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   /* Table styling */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   table { width: 100%; border-collapse: collapse; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   th, td { border: 1px solid #ccc; padding: 10px; vertical-align: top; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   th { background: #f5f5f5; text-align: left; }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   /* 5) Alternate row background color */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   tbody tr:nth-child(even) { background: #f2f7ff; }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .cover { width: 110px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .cover img { width: 110px; border-radius: 6px; display: block; }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   /* 6) Form: labels column + inputs column; labels right-aligned */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   form {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     border: 1px solid #ccc;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     padding: 16px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     border-radius: 12px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     max-width: 700px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .form-row {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     margin-bottom: 12px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .form-label,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .form-field {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     display: inline-block;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     vertical-align: top;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .form-label {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     width: 180px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     text-align: right;   /* right-aligned labels */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     padding-right: 12px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     font-weight: 700;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .form-field {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     width: calc(100% - 210px);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     min-width: 260px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   input, select {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     padding: 8px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     box-sizing: border-box;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   button { padding: 10px 14px; cursor: pointer; }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   /* Optional challenge: fixed social icons */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .social-icons {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     position: fixed;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     top: 100px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     right: 35px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     gap: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     z-index: 9999;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .social-icons a {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     display: inline-flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     width: 38px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     height: 38px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     border-radius: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     border: 1px solid #cfcfcf;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     background: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     justify-content: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   .social-icons img { width: 20px; height: 20px; display: block; }</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   footer { margin-top: 40px; border-top: 1px solid #e5e5e5; padding-top: 14px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;!-- Challenge icons (optional) --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;div class="social-icons" aria-label="Social media links"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;a href="<a href="https://www.facebook.com/"><span class="s2">https://www.facebook.com/</span></a>" target="_blank" rel="noopener noreferrer" aria-label="Facebook"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;img alt="Facebook icon"</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space"> </span>          src="<a href="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"><span class="s4">https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg</span></a>"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;a href="<a href="https://x.com/"><span class="s2">https://x.com/</span></a>" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;img alt="X icon"</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space"> </span>          src="<a href="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg"><span class="s4">https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg</span></a>"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;header&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;h1&gt;Iman Enayati&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;p class="muted"&gt;A quick page with a few favorite things.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;/header&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;main&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;section aria-labelledby="trip"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;h2 id="trip"&gt;A Trip I Took Recently&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       In the past few years, I visited &lt;strong&gt;Banff&lt;/strong&gt; and got to see &lt;strong&gt;Lake Louise&lt;/strong&gt; in person.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       I also went &lt;strong&gt;skiing&lt;/strong&gt;, and it was one of those trips that makes you want to stay outside all day.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       One of my favorite moments was spotting &lt;strong&gt;elk&lt;/strong&gt;—it felt like the perfect “only in Banff” experience.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;section aria-labelledby="pets"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;h2 id="pets"&gt;My Favorite Pet Names&lt;/h2&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;!-- Border + centered container --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;div class="pet-list-wrap"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;li&gt;A dog named &lt;strong&gt;Cody&lt;/strong&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;li&gt;A cat named &lt;strong&gt;Luna&lt;/strong&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;li&gt;A hamster named &lt;strong&gt;Nugget&lt;/strong&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;section aria-labelledby="restaurant"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;h2 id="restaurant"&gt;My Favorite Restaurant&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       My favorite restaurant is</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;a href="<a href="https://www.in-n-out.com/"><span class="s2">https://www.in-n-out.com/</span></a>" target="_blank" rel="noopener noreferrer"&gt;In-N-Out&lt;/a&gt;.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       It’s my favorite because the burgers are &lt;strong&gt;cheap&lt;/strong&gt;, they &lt;strong&gt;taste really good&lt;/strong&gt;,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       and it’s a solid go-to when I want something fast and satisfying.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;p class="muted"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       Side note: if a favorite restaurant doesn’t have a website, that could be a great opportunity to offer them your newfound web skills!</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;section aria-labelledby="food"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;h2 id="food"&gt;My Favorite Food&lt;/h2&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;!-- Background-image div + adjacent text div --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;div class="food-row"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;div class="food-img-bg" role="img" aria-label="A hamburger"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;div class="food-text"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           My favorite food is &lt;strong&gt;hamburgers&lt;/strong&gt;. I like them with a toasted bun, cheese,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           and simple toppings like lettuce and tomato—plus a side of fries if I’m doing it right.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           I’m also a fan of adding sauce and keeping it classic and messy.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;section aria-labelledby="books"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;h2 id="books"&gt;Four of My Favorite Books&lt;/h2&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;table&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;thead&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;th&gt;Book Name&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;th&gt;Cover&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;th&gt;Author&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;th&gt;Summary&lt;/th&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/thead&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;tbody&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;The Intelligent Investor&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td class="cover"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;img src="<a href="https://covers.openlibrary.org/b/id/14658010-L.jpg"><span class="s2">https://covers.openlibrary.org/b/id/14658010-L.jpg</span></a>" alt="Cover of The Intelligent Investor" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;Benjamin Graham&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             Classic on value investing (intrinsic value, “margin of safety,” long-term discipline).</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             It’s still one of the most widely recommended investing books.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;A Random Walk Down Wall Street&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td class="cover"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;img src="<a href="https://covers.openlibrary.org/b/id/14859839-L.jpg"><span class="s2">https://covers.openlibrary.org/b/id/14859839-L.jpg</span></a>" alt="Cover of A Random Walk Down Wall Street" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;Burton G. Malkiel&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             A popular guide to markets explaining why consistently beating the market is hard,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             and how diversification + low-cost strategies can win over time.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;Sapiens: A Brief History of Humankind&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td class="cover"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;img src="<a href="https://covers.openlibrary.org/b/id/14369194-L.jpg"><span class="s2">https://covers.openlibrary.org/b/id/14369194-L.jpg</span></a>" alt="Cover of Sapiens: A Brief History of Humankind" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;Yuval Noah Harari&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             Big-picture history of how humans built societies, economies, and belief systems—also a major bestseller</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             with huge readership.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;Thinking, Fast and Slow&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td class="cover"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;img src="<a href="https://covers.openlibrary.org/b/id/13775637-L.jpg"><span class="s2">https://covers.openlibrary.org/b/id/13775637-L.jpg</span></a>" alt="Cover of Thinking, Fast and Slow" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;Daniel Kahneman&lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             Explains how “fast” intuitive thinking and “slow” deliberate thinking shape our decisions,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             and how common biases can lead us to predictable mistakes.</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;/td&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/tr&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/tbody&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;/table&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;section aria-labelledby="guestbook"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;h2 id="guestbook"&gt;Sign My Guest Book&lt;/h2&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;form action="#" method="post"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;div class="form-row"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-label"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;label for="firstName"&gt;First Name&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-field"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;input id="firstName" name="firstName" type="text" required /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;div class="form-row"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-label"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;label for="lastName"&gt;Last Name&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-field"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;input id="lastName" name="lastName" type="text" required /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;div class="form-row"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-label"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;label for="email"&gt;Email&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-field"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;input id="email" name="email" type="email" required /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;div class="form-row"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-label"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;label for="city"&gt;City&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-field"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;input id="city" name="city" type="text" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;div class="form-row"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-label"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;label for="state"&gt;State&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-field"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;select id="state" name="state" required&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;option value=""&gt;-- Select a state --&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;option value="CA"&gt;California&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;option value="NV"&gt;Nevada&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;option value="AZ"&gt;Arizona&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;option value="OR"&gt;Oregon&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;option value="WA"&gt;Washington&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>             &lt;option value="UT"&gt;Utah&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;/select&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;div class="form-row"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-label"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;span class="form-field"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>           &lt;button type="submit"&gt;Sign Guest Book&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>         &lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>       &lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>     &lt;/form&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;/section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;/main&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;footer&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>   &lt;p class="muted"&gt;Thanks for visiting!&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span> &lt;/footer&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+
+  <!-- Challenge icons (optional) -->
+
+  <div class="social-icons" aria-label="Social media links">
+
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+
+      <img alt="Facebook icon"
+
+           src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
+
+    </a>
+
+    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+
+      <img alt="X icon"
+
+           src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg">
+
+    </a>
+
+  </div>
+
+
+
+  <header>
+
+    <h1>Iman Enayati</h1>
+
+    <p class="muted">A quick page with a few favorite things.</p>
+
+  </header>
+
+
+
+  <main>
+
+    <section aria-labelledby="trip">
+
+      <h2 id="trip">A Trip I Took Recently</h2>
+
+      <p>
+
+        In the past few years, I visited <strong>Banff</strong> and got to see <strong>Lake Louise</strong> in person.
+
+        I also went <strong>skiing</strong>, and it was one of those trips that makes you want to stay outside all day.
+
+        One of my favorite moments was spotting <strong>elk</strong>—it felt like the perfect “only in Banff” experience.
+
+      </p>
+
+    </section>
+
+
+
+    <section aria-labelledby="pets">
+
+      <h2 id="pets">My Favorite Pet Names</h2>
+
+
+
+      <!-- Border + centered container -->
+
+      <div class="pet-list-wrap">
+
+        <ul>
+
+          <li>A dog named <strong>Cody</strong></li>
+
+          <li>A cat named <strong>Luna</strong></li>
+
+          <li>A hamster named <strong>Nugget</strong></li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+
+    <section aria-labelledby="restaurant">
+
+      <h2 id="restaurant">My Favorite Restaurant</h2>
+
+      <p>
+
+        My favorite restaurant is
+
+        <a href="https://www.in-n-out.com/" target="_blank" rel="noopener noreferrer">In-N-Out</a>.
+
+      </p>
+
+      <p>
+
+        It’s my favorite because the burgers are <strong>cheap</strong>, they <strong>taste really good</strong>,
+
+        and it’s a solid go-to when I want something fast and satisfying.
+
+      </p>
+
+      <p class="muted">
+
+        Side note: if a favorite restaurant doesn’t have a website, that could be a great opportunity to offer them your newfound web skills!
+
+      </p>
+
+    </section>
+
+
+
+    <section aria-labelledby="food">
+
+      <h2 id="food">My Favorite Food</h2>
+
+
+
+      <!-- Background-image div + adjacent text div -->
+
+      <div class="food-row">
+
+        <div class="food-img-bg" role="img" aria-label="A hamburger"></div>
+
+        <div class="food-text">
+
+          <p>
+
+            My favorite food is <strong>hamburgers</strong>. I like them with a toasted bun, cheese,
+
+            and simple toppings like lettuce and tomato—plus a side of fries if I’m doing it right.
+
+            I’m also a fan of adding sauce and keeping it classic and messy.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section aria-labelledby="books">
+
+      <h2 id="books">Four of My Favorite Books</h2>
+
+
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>Book Name</th>
+
+            <th>Cover</th>
+
+            <th>Author</th>
+
+            <th>Summary</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>The Intelligent Investor</td>
+
+            <td class="cover">
+
+              <img src="https://covers.openlibrary.org/b/id/14658010-L.jpg" alt="Cover of The Intelligent Investor" />
+
+            </td>
+
+            <td>Benjamin Graham</td>
+
+            <td>
+
+              Classic on value investing (intrinsic value, “margin of safety,” long-term discipline).
+
+              It’s still one of the most widely recommended investing books.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>A Random Walk Down Wall Street</td>
+
+            <td class="cover">
+
+              <img src="https://covers.openlibrary.org/b/id/14859839-L.jpg" alt="Cover of A Random Walk Down Wall Street" />
+
+            </td>
+
+            <td>Burton G. Malkiel</td>
+
+            <td>
+
+              A popular guide to markets explaining why consistently beating the market is hard,
+
+              and how diversification + low-cost strategies can win over time.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>Sapiens: A Brief History of Humankind</td>
+
+            <td class="cover">
+
+              <img src="https://covers.openlibrary.org/b/id/14369194-L.jpg" alt="Cover of Sapiens: A Brief History of Humankind" />
+
+            </td>
+
+            <td>Yuval Noah Harari</td>
+
+            <td>
+
+              Big-picture history of how humans built societies, economies, and belief systems—also a major bestseller
+
+              with huge readership.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>Thinking, Fast and Slow</td>
+
+            <td class="cover">
+
+              <img src="https://covers.openlibrary.org/b/id/13775637-L.jpg" alt="Cover of Thinking, Fast and Slow" />
+
+            </td>
+
+            <td>Daniel Kahneman</td>
+
+            <td>
+
+              Explains how “fast” intuitive thinking and “slow” deliberate thinking shape our decisions,
+
+              and how common biases can lead us to predictable mistakes.
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+
+
+    <section aria-labelledby="guestbook">
+
+      <h2 id="guestbook">Sign My Guest Book</h2>
+
+
+
+      <form action="#" method="post">
+
+        <div class="form-row">
+
+          <span class="form-label">
+
+            <label for="firstName">First Name</label>
+
+          </span>
+
+          <span class="form-field">
+
+            <input id="firstName" name="firstName" type="text" required />
+
+          </span>
+
+        </div>
+
+
+
+        <div class="form-row">
+
+          <span class="form-label">
+
+            <label for="lastName">Last Name</label>
+
+          </span>
+
+          <span class="form-field">
+
+            <input id="lastName" name="lastName" type="text" required />
+
+          </span>
+
+        </div>
+
+
+
+        <div class="form-row">
+
+          <span class="form-label">
+
+            <label for="email">Email</label>
+
+          </span>
+
+          <span class="form-field">
+
+            <input id="email" name="email" type="email" required />
+
+          </span>
+
+        </div>
+
+
+
+        <div class="form-row">
+
+          <span class="form-label">
+
+            <label for="city">City</label>
+
+          </span>
+
+          <span class="form-field">
+
+            <input id="city" name="city" type="text" />
+
+          </span>
+
+        </div>
+
+
+
+        <div class="form-row">
+
+          <span class="form-label">
+
+            <label for="state">State</label>
+
+          </span>
+
+          <span class="form-field">
+
+            <select id="state" name="state" required>
+
+              <option value="">-- Select a state --</option>
+
+              <option value="CA">California</option>
+
+              <option value="NV">Nevada</option>
+
+              <option value="AZ">Arizona</option>
+
+              <option value="OR">Oregon</option>
+
+              <option value="WA">Washington</option>
+
+              <option value="UT">Utah</option>
+
+            </select>
+
+          </span>
+
+        </div>
+
+
+
+        <div class="form-row">
+
+          <span class="form-label"></span>
+
+          <span class="form-field">
+
+            <button type="submit">Sign Guest Book</button>
+
+          </span>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+
+  <footer>
+
+    <p class="muted">Thanks for visiting!</p>
+
+  </footer>
+
 </body>
+
 </html>
