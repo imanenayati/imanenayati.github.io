@@ -1,7 +1,3 @@
-/* ===========================
-   Silver Lining Band - JS
-   No libraries (required)
-   =========================== */
 
 (function () {
   // Footer year
