@@ -1,693 +1,167 @@
-<!-- me_two.html -->
-
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Me Two - Iman Enayati</title>
-
-
-
-  <!-- Google Font (sans serif) -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-
-
-  <style>
-
-    /* 1) Set font to a sans serif Google font */
-
-    body {
-
-      font-family: "Roboto", Arial, Helvetica, sans-serif;
-
-      line-height: 1.55;
-
-      margin: 24px;
-
-      max-width: 980px;
-
-    }
-
-
-
-    /* 2) Set color + size of all H1/H2 and leave 30px margin below */
-
-    h1, h2 {
-
-      color: #1f3b73;
-
-      margin-bottom: 30px;
-
-    }
-
-    h1 { font-size: 2.2rem; }
-
-    h2 { font-size: 1.6rem; }
-
-
-
-    .muted { color: #555; }
-
-    a { color: #0b57d0; }
-
-
-
-    header, section { margin-bottom: 28px; }
-
-
-
-    /* 3) Border around list and center it (do NOT center list items) */
-
-    .pet-list-wrap {
-
-      border: 2px solid #ccc;
-
-      border-radius: 12px;
-
-      padding: 14px 18px;
-
-      width: fit-content;
-
-      margin: 0 auto; /* centers the box */
-
-    }
-
-    .pet-list-wrap ul {
-
-      margin: 0;
-
-      padding-left: 22px; /* keep bullets nicely indented */
-
-      text-align: left;   /* ensure items are NOT centered */
-
-    }
-
-
-
-    /* 4) Favorite food: background image in a div + adjacent text div */
-
-    .food-row { margin-top: 8px; }
-
-    .food-img-bg,
-
-    .food-text {
-
-      display: inline-block;
-
-      vertical-align: top;
-
-    }
-
-    .food-img-bg {
-
-      width: 520px;
-
-      max-width: 100%;
-
-      height: 320px;
-
-      border-radius: 12px;
-
-      background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b0/Hamburger_%2812164386105%29.jpg");
-
-      background-size: cover;
-
-      background-position: center;
-
-      background-repeat: no-repeat;
-
-      margin-right: 16px;
-
-    }
-
-    .food-text {
-
-      width: 380px;
-
-      max-width: 100%;
-
-    }
-
-
-
-    /* Table styling */
-
-    table { width: 100%; border-collapse: collapse; }
-
-    th, td { border: 1px solid #ccc; padding: 10px; vertical-align: top; }
-
-    th { background: #f5f5f5; text-align: left; }
-
-
-
-    /* 5) Alternate row background color */
-
-    tbody tr:nth-child(even) { background: #f2f7ff; }
-
-
-
-    .cover { width: 110px; }
-
-    .cover img { width: 110px; border-radius: 6px; display: block; }
-
-
-
-    /* 6) Form: labels column + inputs column; labels right-aligned */
-
-    form {
-
-      border: 1px solid #ccc;
-
-      padding: 16px;
-
-      border-radius: 12px;
-
-      max-width: 700px;
-
-    }
-
-    .form-row {
-
-      margin-bottom: 12px;
-
-    }
-
-    .form-label,
-
-    .form-field {
-
-      display: inline-block;
-
-      vertical-align: top;
-
-    }
-
-    .form-label {
-
-      width: 180px;
-
-      text-align: right;   /* right-aligned labels */
-
-      padding-right: 12px;
-
-      font-weight: 700;
-
-    }
-
-    .form-field {
-
-      width: calc(100% - 210px);
-
-      min-width: 260px;
-
-    }
-
-    input, select {
-
-      width: 100%;
-
-      padding: 8px;
-
-      box-sizing: border-box;
-
-    }
-
-    button { padding: 10px 14px; cursor: pointer; }
-
-
-
-    /* Optional challenge: fixed social icons */
-
-    .social-icons {
-
-      position: fixed;
-
-      top: 100px;
-
-      right: 35px;
-
-      display: flex;
-
-      gap: 10px;
-
-      align-items: center;
-
-      z-index: 9999;
-
-    }
-
-    .social-icons a {
-
-      display: inline-flex;
-
-      width: 38px;
-
-      height: 38px;
-
-      border-radius: 10px;
-
-      border: 1px solid #cfcfcf;
-
-      background: white;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-decoration: none;
-
-    }
-
-    .social-icons img { width: 20px; height: 20px; display: block; }
-
-
-
-    footer { margin-top: 40px; border-top: 1px solid #e5e5e5; padding-top: 14px; }
-
-  </style>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Silver Lining Band | Wedding & Party Cover Band</title>
+  <meta name="description" content="The Silver Lining Band is a premium wedding and party cover band delivering modern hits, classics, and packed dance floors across the Bay Area and beyond." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/main.js" defer></script>
 </head>
 
-
-
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-  <!-- Challenge icons (optional) -->
+  <div class="page-wrap">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img src="assets/band-mark.svg" alt="The Silver Lining Band mark" />
+          <div class="brand-title">
+            <strong>The Silver Lining Band</strong>
+            <span>Wedding • Corporate • Private Events</span>
+          </div>
+        </a>
 
-  <div class="social-icons" aria-label="Social media links">
+        <button class="hamburger" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+          ☰ Menu
+        </button>
 
-    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <nav id="site-nav" class="nav" data-open="false">
+          <a href="index.html">Home</a>
+          <a href="members.html">Members</a>
+          <a href="repertoire.html">Repertoire</a>
+          <a href="events.html">Events</a>
+          <a href="contact.html">Contact</a>
+        </nav>
 
-      <img alt="Facebook icon"
+        <div class="header-actions">
+          <a class="btn primary" href="contact.html">Check availability</a>
+        </div>
+      </div>
+    </header>
 
-           src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
+    <main id="content">
+      <section class="hero container">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker"><span class="dot"></span> Live music that feels effortless — and looks polished.</div>
+            <h1>
+              Packed dance floors for weddings, parties, and corporate nights.
+            </h1>
+            <p class="lede" style="max-width: 54ch;">
+              We’re a 6-piece cover band blending modern pop, funk, soul, rock, and the classics your guests actually sing along to.
+              From ceremony cues to a final encore — we handle the flow so you can enjoy the moment.
+            </p>
 
-    </a>
+            <div class="badges">
+              <span class="badge">MC & timeline coordination</span>
+              <span class="badge">Pro sound + wireless mics</span>
+              <span class="badge">Custom first-dance options</span>
+              <span class="badge">Travel-friendly setup</span>
+            </div>
 
-    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <div class="section">
+              <a class="btn primary" href="contact.html">Get a quote</a>
+              <a class="btn" href="repertoire.html">Browse the setlist</a>
+            </div>
 
-      <img alt="X icon"
+            <p class="small section">
+              <span style="font-weight: 750; letter-spacing: .06em;">Typical booking:</span>
+              3 hours of live music + DJ-style breaks, plus ceremony/cocktail add-ons.
+            </p>
+          </div>
 
-           src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg">
+          <aside class="card">
+            <h3>What you get</h3>
+            <ul class="list">
+              <li><strong>One point of contact</strong> from planning to load-out</li>
+              <li><strong>Volume control</strong> for dinner → dance floor lift</li>
+              <li><strong>Clean stage look</strong> (black attire + tidy cabling)</li>
+              <li><strong>Setlist shaping</strong> based on your crowd and vibe</li>
+            </ul>
+            <hr class="sep" />
+            <p class="small">
+              Based in Northern California. We regularly play Napa, SF, San Jose, Peninsula, and Monterey.
+            </p>
+          </aside>
+        </div>
+      </section>
 
-    </a>
+      <section class="container section">
+        <h2>Packages</h2>
+        <div class="grid-3 section">
+          <div class="card soft">
+            <h3>Reception Essentials</h3>
+            <p class="small">Perfect for evening reception dance floors.</p>
+            <ul class="list">
+              <li>3 x 45-minute live sets</li>
+              <li>DJ-style break music</li>
+              <li>Wireless mic for toasts</li>
+            </ul>
+          </div>
 
+          <div class="card soft">
+            <h3>Full Wedding Flow</h3>
+            <p class="small">Ceremony to last song — seamlessly.</p>
+            <ul class="list">
+              <li>Ceremony cues + lapel mic</li>
+              <li>Cocktail hour jazz-pop set</li>
+              <li>Reception Essentials included</li>
+            </ul>
+          </div>
+
+          <div class="card soft">
+            <h3>Corporate & Gala</h3>
+            <p class="small">Clean branding, fast changeovers.</p>
+            <ul class="list">
+              <li>Stage plot + tech advance</li>
+              <li>Flexible set lengths</li>
+              <li>Optional walkthrough MC</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section">
+        <h2>What couples and planners say</h2>
+        <div class="grid-3 section">
+          <div class="card soft">
+            <p>“They read the room like pros. Dinner was elegant, and the dance set was nonstop.”</p>
+            <p class="small">— Maya & Jordan, Sonoma reception</p>
+          </div>
+          <div class="card soft">
+            <p>“Fast setup, no drama, great communication. The band made my job easier.”</p>
+            <p class="small">— L. Chen, event planner (SF)</p>
+          </div>
+          <div class="card soft">
+            <p>“They learned our first dance and nailed it. Then they kept three generations dancing.”</p>
+            <p class="small">— Priya & Sam, San Jose wedding</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section">
+        <div class="card">
+          <h2>Ready to check your date?</h2>
+          <p class="lede">Tell us your venue, guest count, and the vibe you want — we’ll reply within 24 hours.</p>
+          <a class="btn primary" href="contact.html">Contact & availability</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>The Silver Lining Band</strong><br/>
+          <span class="small">© <span data-year></span> • Weddings & private events</span>
+        </div>
+        <div class="footer-links">
+          <a href="contact.html">Bookings</a>
+          <a href="mobile-friendly.html">Mobile-friendly test</a>
+        </div>
+      </div>
+    </footer>
   </div>
-
-
-
-  <header>
-
-    <h1>Iman Enayati</h1>
-
-    <p class="muted">A quick page with a few favorite things.</p>
-
-  </header>
-
-
-
-  <main>
-
-    <section aria-labelledby="trip">
-
-      <h2 id="trip">A Trip I Took Recently</h2>
-
-      <p>
-
-        In the past few years, I visited <strong>Banff</strong> and got to see <strong>Lake Louise</strong> in person.
-
-        I also went <strong>skiing</strong>, and it was one of those trips that makes you want to stay outside all day.
-
-        One of my favorite moments was spotting <strong>elk</strong>—it felt like the perfect “only in Banff” experience.
-
-      </p>
-
-    </section>
-
-
-
-    <section aria-labelledby="pets">
-
-      <h2 id="pets">My Favorite Pet Names</h2>
-
-
-
-      <!-- Border + centered container -->
-
-      <div class="pet-list-wrap">
-
-        <ul>
-
-          <li>A dog named <strong>Cody</strong></li>
-
-          <li>A cat named <strong>Luna</strong></li>
-
-          <li>A hamster named <strong>Nugget</strong></li>
-
-        </ul>
-
-      </div>
-
-    </section>
-
-
-
-    <section aria-labelledby="restaurant">
-
-      <h2 id="restaurant">My Favorite Restaurant</h2>
-
-      <p>
-
-        My favorite restaurant is
-
-        <a href="https://www.in-n-out.com/" target="_blank" rel="noopener noreferrer">In-N-Out</a>.
-
-      </p>
-
-      <p>
-
-        It’s my favorite because the burgers are <strong>cheap</strong>, they <strong>taste really good</strong>,
-
-        and it’s a solid go-to when I want something fast and satisfying.
-
-      </p>
-
-      <p class="muted">
-
-        Side note: if a favorite restaurant doesn’t have a website, that could be a great opportunity to offer them your newfound web skills!
-
-      </p>
-
-    </section>
-
-
-
-    <section aria-labelledby="food">
-
-      <h2 id="food">My Favorite Food</h2>
-
-
-
-      <!-- Background-image div + adjacent text div -->
-
-      <div class="food-row">
-
-        <div class="food-img-bg" role="img" aria-label="A hamburger"></div>
-
-        <div class="food-text">
-
-          <p>
-
-            My favorite food is <strong>hamburgers</strong>. I like them with a toasted bun, cheese,
-
-            and simple toppings like lettuce and tomato—plus a side of fries if I’m doing it right.
-
-            I’m also a fan of adding sauce and keeping it classic and messy.
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <section aria-labelledby="books">
-
-      <h2 id="books">Four of My Favorite Books</h2>
-
-
-
-      <table>
-
-        <thead>
-
-          <tr>
-
-            <th>Book Name</th>
-
-            <th>Cover</th>
-
-            <th>Author</th>
-
-            <th>Summary</th>
-
-          </tr>
-
-        </thead>
-
-        <tbody>
-
-          <tr>
-
-            <td>The Intelligent Investor</td>
-
-            <td class="cover">
-
-              <img src="https://covers.openlibrary.org/b/id/14658010-L.jpg" alt="Cover of The Intelligent Investor" />
-
-            </td>
-
-            <td>Benjamin Graham</td>
-
-            <td>
-
-              Classic on value investing (intrinsic value, “margin of safety,” long-term discipline).
-
-              It’s still one of the most widely recommended investing books.
-
-            </td>
-
-          </tr>
-
-          <tr>
-
-            <td>A Random Walk Down Wall Street</td>
-
-            <td class="cover">
-
-              <img src="https://covers.openlibrary.org/b/id/14859839-L.jpg" alt="Cover of A Random Walk Down Wall Street" />
-
-            </td>
-
-            <td>Burton G. Malkiel</td>
-
-            <td>
-
-              A popular guide to markets explaining why consistently beating the market is hard,
-
-              and how diversification + low-cost strategies can win over time.
-
-            </td>
-
-          </tr>
-
-          <tr>
-
-            <td>Sapiens: A Brief History of Humankind</td>
-
-            <td class="cover">
-
-              <img src="https://covers.openlibrary.org/b/id/14369194-L.jpg" alt="Cover of Sapiens: A Brief History of Humankind" />
-
-            </td>
-
-            <td>Yuval Noah Harari</td>
-
-            <td>
-
-              Big-picture history of how humans built societies, economies, and belief systems—also a major bestseller
-
-              with huge readership.
-
-            </td>
-
-          </tr>
-
-          <tr>
-
-            <td>Thinking, Fast and Slow</td>
-
-            <td class="cover">
-
-              <img src="https://covers.openlibrary.org/b/id/13775637-L.jpg" alt="Cover of Thinking, Fast and Slow" />
-
-            </td>
-
-            <td>Daniel Kahneman</td>
-
-            <td>
-
-              Explains how “fast” intuitive thinking and “slow” deliberate thinking shape our decisions,
-
-              and how common biases can lead us to predictable mistakes.
-
-            </td>
-
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </section>
-
-
-
-    <section aria-labelledby="guestbook">
-
-      <h2 id="guestbook">Sign My Guest Book</h2>
-
-
-
-      <form action="#" method="post">
-
-        <div class="form-row">
-
-          <span class="form-label">
-
-            <label for="firstName">First Name</label>
-
-          </span>
-
-          <span class="form-field">
-
-            <input id="firstName" name="firstName" type="text" required />
-
-          </span>
-
-        </div>
-
-
-
-        <div class="form-row">
-
-          <span class="form-label">
-
-            <label for="lastName">Last Name</label>
-
-          </span>
-
-          <span class="form-field">
-
-            <input id="lastName" name="lastName" type="text" required />
-
-          </span>
-
-        </div>
-
-
-
-        <div class="form-row">
-
-          <span class="form-label">
-
-            <label for="email">Email</label>
-
-          </span>
-
-          <span class="form-field">
-
-            <input id="email" name="email" type="email" required />
-
-          </span>
-
-        </div>
-
-
-
-        <div class="form-row">
-
-          <span class="form-label">
-
-            <label for="city">City</label>
-
-          </span>
-
-          <span class="form-field">
-
-            <input id="city" name="city" type="text" />
-
-          </span>
-
-        </div>
-
-
-
-        <div class="form-row">
-
-          <span class="form-label">
-
-            <label for="state">State</label>
-
-          </span>
-
-          <span class="form-field">
-
-            <select id="state" name="state" required>
-
-              <option value="">-- Select a state --</option>
-
-              <option value="CA">California</option>
-
-              <option value="NV">Nevada</option>
-
-              <option value="AZ">Arizona</option>
-
-              <option value="OR">Oregon</option>
-
-              <option value="WA">Washington</option>
-
-              <option value="UT">Utah</option>
-
-            </select>
-
-          </span>
-
-        </div>
-
-
-
-        <div class="form-row">
-
-          <span class="form-label"></span>
-
-          <span class="form-field">
-
-            <button type="submit">Sign Guest Book</button>
-
-          </span>
-
-        </div>
-
-      </form>
-
-    </section>
-
-  </main>
-
-
-
-  <footer>
-
-    <p class="muted">Thanks for visiting!</p>
-
-  </footer>
-
 </body>
-
 </html>
