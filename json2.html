@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>JSON Tasks - Part 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; line-height: 1.4; }
+    .nav a { margin-right: 12px; }
+    .song {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 12px 0;
+      max-width: 720px;
+    }
+    .song h3 { margin: 0 0 8px; }
+    .meta { margin: 4px 0; }
+    .error { color: #b00020; }
+  </style>
+
+  <!-- jQuery required for $.get -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="json1.html">Part 1</a>
+    <a href="json3.html">Part 3</a>
+  </div>
+
+  <h1>Part 2: Read JSON from <code>songs.json</code></h1>
+  <p>Loaded via <code>$.get</code> and rendered inside a <code>&lt;div&gt;</code> using <code>innerHTML</code>.</p>
+
+  <div id="songs"></div>
+
+  <script>
+    let songsData = null; // store in a variable
+
+    $.get("songs.json", function (data) {
+      songsData = data;
+
+      const songsDiv = document.getElementById("songs");
+
+      const songs = (songsData && songsData.songs) ? songsData.songs : [];
+      if (!Array.isArray(songs) || songs.length === 0) {
+        songsDiv.innerHTML = "<p class='error'>No songs found in songs.json.</p>";
+        return;
+      }
+
+      let html = "";
+      for (const song of songs) {
+        const genresText = Array.isArray(song.genres) ? song.genres.join(", ") : "";
+        html += `
+          <div class="song">
+            <h3>${escapeHtml(song.title)}</h3>
+            <p class="meta"><strong>Artist:</strong> ${escapeHtml(song.artist)}</p>
+            <p class="meta"><strong>Genre:</strong> ${escapeHtml(genresText)}</p>
+            <p class="meta"><strong>Released:</strong> ${escapeHtml(String(song.year))}</p>
+          </div>
+        `;
+      }
+
+      // Requirement: use innerHTML to display the JSON data in a <div>
+      songsDiv.innerHTML = html;
+
+    }, "json").fail(function () {
+      document.getElementById("songs").innerHTML =
+        "<p class='error'>Failed to load songs.json.</p>";
+    });
+
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+  </script>
+</body>
+</html>

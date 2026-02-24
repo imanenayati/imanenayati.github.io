@@ -1,0 +1,52 @@
+{
+  "songs": [
+    {
+      "title": "Bohemian Rhapsody",
+      "artist": "Queen",
+      "year": 1975,
+      "genres": ["rock", "progressive rock"]
+    },
+    {
+      "title": "Billie Jean",
+      "artist": "Michael Jackson",
+      "year": 1982,
+      "genres": ["pop", "funk", "R&B"]
+    },
+    {
+      "title": "Smells Like Teen Spirit",
+      "artist": "Nirvana",
+      "year": 1991,
+      "genres": ["rock", "grunge"]
+    },
+    {
+      "title": "Take On Me",
+      "artist": "a-ha",
+      "year": 1984,
+      "genres": ["pop", "synth-pop"]
+    },
+    {
+      "title": "Enter Sandman",
+      "artist": "Metallica",
+      "year": 1991,
+      "genres": ["metal", "heavy metal"]
+    },
+    {
+      "title": "Hey Ya!",
+      "artist": "OutKast",
+      "year": 2003,
+      "genres": ["hip hop", "pop", "funk"]
+    },
+    {
+      "title": "Ring of Fire",
+      "artist": "Johnny Cash",
+      "year": 1963,
+      "genres": ["country"]
+    },
+    {
+      "title": "One More Time",
+      "artist": "Daft Punk",
+      "year": 2000,
+      "genres": ["electronic", "house", "dance"]
+    }
+  ]
+}

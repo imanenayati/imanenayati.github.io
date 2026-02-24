@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>JSON Tasks - Part 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; line-height: 1.4; }
+    pre { background: #f6f8fa; padding: 12px; border-radius: 10px; overflow: auto; border: 1px solid #ddd; }
+    .nav a { margin-right: 12px; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="json2.html">Part 2</a>
+    <a href="json3.html">Part 3</a>
+  </div>
+
+  <h1>Part 1: Create a JSON + Convert to String</h1>
+  <p>Below is the JSON object converted to a string via <code>JSON.stringify</code> and displayed as text.</p>
+
+  <pre id="output"></pre>
+
+  <script>
+    // JSON object at the top of the file (assigned to a variable)
+    const songsData = {
+      songs: [
+        {
+          title: "Bohemian Rhapsody",
+          artist: "Queen",
+          year: 1975,
+          genres: ["rock", "progressive rock"]
+        },
+        {
+          title: "Billie Jean",
+          artist: "Michael Jackson",
+          year: 1982,
+          genres: ["pop", "funk", "R&B"]
+        },
+        {
+          title: "Smells Like Teen Spirit",
+          artist: "Nirvana",
+          year: 1991,
+          genres: ["rock", "grunge"]
+        },
+        {
+          title: "Take On Me",
+          artist: "a-ha",
+          year: 1984,
+          genres: ["pop", "synth-pop"]
+        },
+        {
+          title: "Enter Sandman",
+          artist: "Metallica",
+          year: 1991,
+          genres: ["metal", "heavy metal"]
+        },
+        {
+          title: "Hey Ya!",
+          artist: "OutKast",
+          year: 2003,
+          genres: ["hip hop", "pop", "funk"]
+        },
+        {
+          title: "Ring of Fire",
+          artist: "Johnny Cash",
+          year: 1963,
+          genres: ["country"]
+        },
+        {
+          title: "One More Time",
+          artist: "Daft Punk",
+          year: 2000,
+          genres: ["electronic", "house", "dance"]
+        }
+      ]
+    };
+
+    // Convert JSON object to a string and display the resulting text string
+    const jsonString = JSON.stringify(songsData, null, 2);
+    document.getElementById("output").textContent = jsonString;
+  </script>
+</body>
+</html>
